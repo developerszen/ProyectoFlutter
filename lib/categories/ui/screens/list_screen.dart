@@ -8,10 +8,10 @@ class CategoriesListScreen extends StatelessWidget {
     Widget build(BuildContext context) {
         return ListView(
             children: [
-                CategoriesCardWidget(),
-                CategoriesCardWidget(),
-                CategoriesCardWidget(),
-                CategoriesCardWidget(),
+                CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=1'),
+                CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=2'),
+                CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=3'),
+                CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=4'),
             ],
         );
         

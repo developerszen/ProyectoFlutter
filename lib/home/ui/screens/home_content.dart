@@ -1,3 +1,5 @@
+import 'package:book_app/books/ui/widgets/book_widget.dart';
+import 'package:book_app/categories/ui/widgets/card_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeContent extends StatelessWidget {
@@ -20,14 +22,14 @@ class HomeContent extends StatelessWidget {
                     child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                            Container(
-                                color: Colors.green,
-                                width: 100,
-                                height: 100,
-                            ),
+                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=1'),
+                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=2'),
+                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=3'),
+                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=4'),
                         ],
                     ),
                 ),
+                SizedBox(height: 10),
                 Text(
                     'Libros',
                     style: TextStyle(
@@ -40,16 +42,10 @@ class HomeContent extends StatelessWidget {
                     child: ListView(
                         scrollDirection: Axis.vertical,
                         children: [
-                            Container(
-                                color: Colors.green,
-                                width: 100,
-                                height: 100,
-                            ),
-                            Container(
-                                color: Colors.yellow,
-                                width: 100,
-                                height: 100,
-                            ),
+                            BookWidget( imageUrl: 'https://picsum.photos/300/300?random=1' ),
+                            BookWidget( imageUrl: 'https://picsum.photos/300/300?random=2' ),
+                            BookWidget( imageUrl: 'https://picsum.photos/300/300?random=3' ),
+                            BookWidget( imageUrl: 'https://picsum.photos/300/300?random=4' ),
                         ],
                     ),
                 ),
