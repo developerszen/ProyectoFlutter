@@ -9,6 +9,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+    final _formKey = GlobalKey<FormState>();
+    String _password = '';
+    String _email = '';
+
     @override
     Widget build(BuildContext context) {
         return Scaffold(
@@ -18,6 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     children: [
                         Text('Login'),
                         Form(
+                            key: _formKey,
                             child: Column(
                                 children: [
                                     CustomInput(
@@ -41,7 +47,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                     RaisedButton(
                                         child: Text('Login'),
-                                        onPressed: (){}
+                                        onPressed: (){
+
+                                        }
                                     )
                                 ],
                             )
@@ -50,5 +58,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
             ),
         );
+    }
+
+    _submit() {
+        
     }
 }
