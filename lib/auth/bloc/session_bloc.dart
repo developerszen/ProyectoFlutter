@@ -8,7 +8,7 @@ class Session {
 
     set(String token) async {
         final data = {
-            "accesss_token" : token,
+            "access_token"  : token,
             "created_at"    : DateTime.now().toString()
         };
         await storage.write(key: key, value: jsonEncode(data));

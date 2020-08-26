@@ -1,3 +1,4 @@
+import 'package:book_app/auth/bloc/auth_bloc.dart';
 import 'package:book_app/auth/ui/widgets/input_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -33,6 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                             if(value.isEmpty){
                                                 return 'El correo debe ser llenado';
                                             }
+                                            setState(() => _email = value);
                                         },
                                     ),
                                     CustomInput(
@@ -43,13 +45,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                             if(value.isEmpty){
                                                 return 'El password debe ser llenado';
                                             }
+                                            setState(() => _password = value);
                                         },
                                     ),
                                     RaisedButton(
                                         child: Text('Login'),
-                                        onPressed: (){
-
-                                        }
+                                        onPressed: _submit
                                     )
                                 ],
                             )
@@ -60,7 +61,20 @@ class _LoginScreenState extends State<LoginScreen> {
         );
     }
 
-    _submit() {
-        
+    _submit() async {
+        if (_formKey.currentState.validate()) {
+            final _login = await AuthBloc().login(
+                context, 
+                email: _email, 
+                password: _password
+            );
+
+            if (_login) {
+                print('Logueado');
+                Navigator.pushNamedAndRemoveUntil(context, '/homeScreen', (route) => false);
+            } else {
+                print('Datos erroneos');
+            }
+        }
     }
 }

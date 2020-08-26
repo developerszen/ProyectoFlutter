@@ -9,7 +9,8 @@ class CustomInput extends StatefulWidget {
         this.valitor,
         this.onSaved,
         this.inputType = TextInputType.text,
-        this.maxLines = 1
+        this.maxLines = 1,
+        this.initialValue,
     }) : super(key: key);
 
     final String label;
@@ -19,6 +20,7 @@ class CustomInput extends StatefulWidget {
     final TextInputType inputType;
     final Function valitor;
     final Function onSaved;
+    final String initialValue;
 
     @override
     _CustomInputState createState() => _CustomInputState();
@@ -30,6 +32,7 @@ class _CustomInputState extends State<CustomInput> {
         return Container(
             margin: EdgeInsets.all(10),
             child: TextFormField(
+                initialValue: widget.initialValue,
                 validator: widget.valitor,
                 obscureText: widget.pass,
                 keyboardType: widget.inputType,

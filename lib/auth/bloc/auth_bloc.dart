@@ -27,8 +27,11 @@ class AuthBloc {
 
             final parsed = jsonDecode(res.body);
 
+            print(res.statusCode);
+
             if(res.statusCode == 200){
                 final token = parsed['token'] as String;
+                print(token);
                 await session.set(token);
                 return true;
             }
@@ -37,6 +40,20 @@ class AuthBloc {
         } catch (e) {
             print('Error: $e');
             return false;
+        }
+    }
+
+    Future<String> getAccessToken() async {
+        try {
+            final res = await session.get();
+            if(res != null) {
+                final acessToken = res['access_token'] as String;
+                return acessToken;
+            } 
+            return null;
+        } catch (e) {
+            print(e);
+            return null;
         }
     }
 }

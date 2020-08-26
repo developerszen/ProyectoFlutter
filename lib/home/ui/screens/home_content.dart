@@ -22,10 +22,10 @@ class HomeContent extends StatelessWidget {
                     child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
-                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=1'),
-                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=2'),
-                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=3'),
-                            CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=4'),
+                            // CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=1'),
+                            // CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=2'),
+                            // CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=3'),
+                            // CategoriesCardWidget(urlImage: 'https://picsum.photos/300/150?random=4'),
                         ],
                     ),
                 ),
